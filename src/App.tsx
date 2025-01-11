@@ -4,7 +4,7 @@ import GoogleClassroomIcon from "./assets/landing/google-classroom.svg"
 import RubricIcon from "./assets/landing/rubric.svg"
 import GradedPaperIcon from "./assets/landing/paper.svg"
 import WarningIcon from "./assets/landing/warning.svg"
-import { Card } from "@/components/ui/card"
+import { Card, CardTitle } from "@/components/ui/card"
 
 import { Gauge } from "@/components/ui/gauge"
 
@@ -43,7 +43,7 @@ const App = () => {
                             <div className="flex flex-col items-center justify-center gap-2">
                                 <img className="h-16 w-16" src={WarningIcon} alt="AI Detection" />
 
-                                <p>AI Detection</p>
+                                <CardTitle>AI Detection</CardTitle>
                             </div>
                             <div className="flex w-[200px] items-center justify-center">
                                 <div>
