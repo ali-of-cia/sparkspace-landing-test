@@ -5,8 +5,10 @@ import RubricIcon from "./assets/landing/rubric.svg"
 import GradedPaperIcon from "./assets/landing/paper.svg"
 import WarningIcon from "./assets/landing/warning.svg"
 import { Card, CardTitle } from "@/components/ui/card"
-
 import { Gauge } from "@/components/ui/gauge"
+import { Button } from "@/components/ui/button"
+
+import CheckmarkIcon from "./assets/landing/checkmark.svg"
 
 const CANNED_FEEDBACK =
     "**Summary Evaluation Against Rubric: Accuracy (10/10):** The essay presents accurate information about Abraham Lincoln's life, presidency, and significant contributions, including key events like his election, the Civil..."
@@ -62,14 +64,27 @@ const App = () => {
                                 <div></div>
                             </div>
                         </Card>
-                        <Card className="flex h-[220px] w-[370px] justify-center gap-2 rounded p-5">
+                        <Card className="flex h-[220px] w-[370px] justify-center gap-4 rounded p-5">
                             <div className="flex flex-col items-center justify-center">
-                                <img className="h-16 w-16" src={RubricIcon} alt="Use Your Rubric" />
-
-                                <p>Use Your Rubric</p>
+                                <div className="relative">
+                                    <img
+                                        src={RubricIcon}
+                                        alt="Rubric"
+                                        className="transition-all duration-500 group-hover:rotate-6 group-hover:scale-110"
+                                    />
+                                    <div className="absolute -top-2 right-4 h-4 w-4 rounded-full bg-green-500 group-hover:scale-125 motion-safe:animate-bounce">
+                                        <img src={CheckmarkIcon} alt="Checkmark" />
+                                    </div>
+                                    <CardTitle className="mt-4">Use Your Rubric</CardTitle>
+                                </div>
                             </div>
-                            <div className="flex w-[200px] items-center justify-center">
-                                <div></div>
+                            <div className="flex w-[180px] flex-col items-center justify-center text-center">
+                                <CardDescription className="mt-3 text-gray-500">
+                                    Use your rubric and start grading essays with ease!
+                                </CardDescription>
+                                <Button className="mt-6 bg-green-500 text-white hover:bg-green-600">
+                                    Start Grading
+                                </Button>
                             </div>
                         </Card>
                     </div>
