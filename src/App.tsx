@@ -80,12 +80,16 @@ const App = () => {
                                     <div className="absolute -top-2 right-0 h-4 w-4 rounded-full bg-green-500 group-hover:scale-125 motion-safe:animate-bounce">
                                         <img src={CheckmarkIcon} alt="Checkmark" />
                                     </div>
+                                    <CardTitle className="mt-4">Use Your Rubric</CardTitle>
                                 </div>
                             </div>
-                            <div className="flex w-[200px] flex-col items-center justify-center text-center">
-                                <CardTitle className="mb-4">Use Your Rubric</CardTitle>
-                                <CardDescription>Use your rubric and start grading essays with ease!</CardDescription>
-                                <Button className="mt-4 w-full">Use Your Rubric</Button>
+                            <div className="flex w-[180px] flex-col items-center justify-center text-center">
+                                <CardDescription className="mt-3 text-gray-500">
+                                    Use your rubric and start grading essays with ease!
+                                </CardDescription>
+                                <Button className="mt-6 bg-green-500 text-white hover:bg-green-600">
+                                    Start Grading
+                                </Button>
                             </div>
                         </Card>
                     </div>
