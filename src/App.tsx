@@ -4,10 +4,11 @@ import GoogleClassroomIcon from "./assets/landing/google-classroom.svg"
 import RubricIcon from "./assets/landing/rubric.svg"
 import GradedPaperIcon from "./assets/landing/paper.svg"
 import WarningIcon from "./assets/landing/warning.svg"
-import CheckmarkIcon from "./assets/landing/checkmark.svg"
-
-import { Card, CardTitle, CardDescription } from "@/components/ui/card"
+import { Card, CardTitle } from "@/components/ui/card"
+import { Gauge } from "@/components/ui/gauge"
 import { Button } from "@/components/ui/button"
+
+import CheckmarkIcon from "./assets/landing/checkmark.svg"
 
 const CANNED_FEEDBACK =
     "**Summary Evaluation Against Rubric: Accuracy (10/10):** The essay presents accurate information about Abraham Lincoln's life, presidency, and significant contributions, including key events like his election, the Civil..."
@@ -44,18 +45,12 @@ const App = () => {
                             <div className="flex flex-col items-center justify-center gap-2">
                                 <img className="h-16 w-16" src={WarningIcon} alt="AI Detection" />
 
-                                <p>AI Detection</p>
+                                <CardTitle>AI Detection</CardTitle>
                             </div>
                             <div className="flex w-[200px] items-center justify-center">
                                 <div>
                                     <p className="mb-3 text-sm">Probability AI generated</p>
-                                    <div className="relative flex aspect-[2] items-center justify-center overflow-hidden rounded-t-full bg-navy-900">
-                                        <div className="absolute top-0 aspect-square w-full rotate-[calc(72deg-45deg)] bg-gradient-to-tr from-transparent from-50% to-white to-50% transition-transform duration-500"></div>
-                                        <div className="absolute top-1/4 flex aspect-square w-3/4 justify-center rounded-full bg-white"></div>
-                                        <div className="absolute bottom-0 w-full truncate text-center text-2xl leading-none">
-                                            40%
-                                        </div>
-                                    </div>
+                                    <Gauge percentage={40} ariaLabel="AI generation probability gauge" />
                                 </div>
                             </div>
                         </Card>
