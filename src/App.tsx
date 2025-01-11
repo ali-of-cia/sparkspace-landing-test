@@ -5,7 +5,7 @@ import RubricIcon from "./assets/landing/rubric.svg"
 import GradedPaperIcon from "./assets/landing/paper.svg"
 import WarningIcon from "./assets/landing/warning.svg"
 
-import { Card } from "@/components/ui/card"
+import { Card, CardTitle, CardDescription } from "@/components/ui/card"
 import { TypingText } from "@/components/ui/typing-text"
 
 const CANNED_FEEDBACK =
@@ -27,16 +27,16 @@ const App = () => {
                     <p className="mt-5 text-center text-lg font-semibold">For ELA teachers in grades 5-12</p>
 
                     <div className="mx-auto mt-10 flex max-w-[1000px] flex-wrap justify-center gap-4">
-                        <Card className="flex h-[220px] w-[370px] justify-center gap-2 rounded p-5">
+                        <Card className="flex h-[220px] w-[370px] justify-center gap-4 rounded p-5">
                             <div className="flex flex-col items-center justify-center">
                                 <img className="h-16 w-16" src={GradedPaperIcon} alt="Graded Paper" />
 
-                                <p>AI Feedback</p>
+                                <CardTitle className="mt-4">AI Feedback</CardTitle>
                             </div>
                             <div className="flex w-[200px] justify-center">
-                                <div>
+                                <CardDescription>
                                     <TypingText text={CANNED_FEEDBACK} speed={100} className="text-sm" />
-                                </div>
+                                </CardDescription>
                             </div>
                         </Card>
                         <Card className="flex h-[220px] w-[370px] justify-center gap-2 rounded p-5">
