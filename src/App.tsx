@@ -77,7 +77,7 @@ const App = () => {
                                         alt="Rubric"
                                         className="transition-all duration-500 group-hover:rotate-6 group-hover:scale-110"
                                     />
-                                    <div className="absolute -top-2 right-0 h-4 w-4 rounded-full bg-green-500 group-hover:scale-125 motion-safe:animate-bounce">
+                                    <div className="absolute -top-2 right-4 h-4 w-4 rounded-full bg-green-500 group-hover:scale-125 motion-safe:animate-bounce">
                                         <img src={CheckmarkIcon} alt="Checkmark" />
                                     </div>
                                     <CardTitle className="mt-4">Use Your Rubric</CardTitle>
