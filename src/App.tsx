@@ -4,9 +4,12 @@ import GoogleClassroomIcon from "./assets/landing/google-classroom.svg"
 import RubricIcon from "./assets/landing/rubric.svg"
 import GradedPaperIcon from "./assets/landing/paper.svg"
 import WarningIcon from "./assets/landing/warning.svg"
-
 import { Card, CardTitle, CardDescription } from "@/components/ui/card"
+import { Gauge } from "@/components/ui/gauge"
+import { Button } from "@/components/ui/button"
 import { TypingText } from "@/components/ui/typing-text"
+
+import CheckmarkIcon from "./assets/landing/checkmark.svg"
 
 const CANNED_FEEDBACK =
     "**Summary Evaluation Against Rubric: Accuracy (10/10):** The essay presents accurate information about Abraham Lincoln's life, presidency, and significant contributions, including key events like his election, the Civil..."
@@ -33,7 +36,7 @@ const App = () => {
 
                                 <CardTitle className="mt-4">AI Feedback</CardTitle>
                             </div>
-                            <div className="flex w-[200px] justify-center">
+                            <div className="flex w-[200px] items-center justify-center">
                                 <CardDescription>
                                     <TypingText text={CANNED_FEEDBACK} speed={100} className="text-sm" />
                                 </CardDescription>
@@ -43,18 +46,12 @@ const App = () => {
                             <div className="flex flex-col items-center justify-center gap-2">
                                 <img className="h-16 w-16" src={WarningIcon} alt="AI Detection" />
 
-                                <p>AI Detection</p>
+                                <CardTitle>AI Detection</CardTitle>
                             </div>
                             <div className="flex w-[200px] items-center justify-center">
                                 <div>
                                     <p className="mb-3 text-sm">Probability AI generated</p>
-                                    <div className="relative flex aspect-[2] items-center justify-center overflow-hidden rounded-t-full bg-navy-900">
-                                        <div className="absolute top-0 aspect-square w-full rotate-[calc(72deg-45deg)] bg-gradient-to-tr from-transparent from-50% to-white to-50% transition-transform duration-500"></div>
-                                        <div className="absolute top-1/4 flex aspect-square w-3/4 justify-center rounded-full bg-white"></div>
-                                        <div className="absolute bottom-0 w-full truncate text-center text-2xl leading-none">
-                                            40%
-                                        </div>
-                                    </div>
+                                    <Gauge percentage={40} ariaLabel="AI generation probability gauge" />
                                 </div>
                             </div>
                         </Card>
@@ -62,20 +59,33 @@ const App = () => {
                             <div className="flex flex-col items-center justify-center">
                                 <img className="h-16 w-16" src={GoogleClassroomIcon} alt="Import Essays" />
 
-                                <p>Import Essays</p>
+                                <CardTitle className="mt-4">Import Essays</CardTitle>
                             </div>
                             <div className="flex w-[200px] items-center justify-center">
                                 <div></div>
                             </div>
                         </Card>
-                        <Card className="flex h-[220px] w-[370px] justify-center gap-2 rounded p-5">
+                        <Card className="flex h-[220px] w-[370px] justify-center gap-4 rounded p-5">
                             <div className="flex flex-col items-center justify-center">
-                                <img className="h-16 w-16" src={RubricIcon} alt="Use Your Rubric" />
-
-                                <p>Use Your Rubric</p>
+                                <div className="relative">
+                                    <img
+                                        src={RubricIcon}
+                                        alt="Rubric"
+                                        className="transition-all duration-500 group-hover:rotate-6 group-hover:scale-110"
+                                    />
+                                    <div className="absolute -top-2 right-4 h-4 w-4 rounded-full bg-green-500 group-hover:scale-125 motion-safe:animate-bounce">
+                                        <img src={CheckmarkIcon} alt="Checkmark" />
+                                    </div>
+                                    <CardTitle className="mt-4">Use Your Rubric</CardTitle>
+                                </div>
                             </div>
-                            <div className="flex w-[200px] items-center justify-center">
-                                <div></div>
+                            <div className="flex w-[180px] flex-col items-center justify-center text-center">
+                                <CardDescription className="mt-3 text-gray-500">
+                                    Use your rubric and start grading essays with ease!
+                                </CardDescription>
+                                <Button className="mt-6 bg-green-500 text-white hover:bg-green-600">
+                                    Start Grading
+                                </Button>
                             </div>
                         </Card>
                     </div>
