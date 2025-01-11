@@ -4,7 +4,9 @@ import GoogleClassroomIcon from "./assets/landing/google-classroom.svg"
 import RubricIcon from "./assets/landing/rubric.svg"
 import GradedPaperIcon from "./assets/landing/paper.svg"
 import WarningIcon from "./assets/landing/warning.svg"
+
 import { Card } from "@/components/ui/card"
+import { TypingText } from "@/components/ui/typing-text"
 
 const CANNED_FEEDBACK =
     "**Summary Evaluation Against Rubric: Accuracy (10/10):** The essay presents accurate information about Abraham Lincoln's life, presidency, and significant contributions, including key events like his election, the Civil..."
@@ -31,9 +33,9 @@ const App = () => {
 
                                 <p>AI Feedback</p>
                             </div>
-                            <div className="flex w-[200px] items-center justify-center">
+                            <div className="flex w-[200px] justify-center">
                                 <div>
-                                    <p className="text-sm">{CANNED_FEEDBACK}</p>
+                                    <TypingText text={CANNED_FEEDBACK} speed={100} className="text-sm" />
                                 </div>
                             </div>
                         </Card>
